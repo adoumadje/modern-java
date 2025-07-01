@@ -13,13 +13,17 @@ public class DefaultMethodExample2 {
         Consumer<Student> studentConsumer = System.out::println;
         Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
         Comparator<Student> gpaComparator = Comparator.comparingDouble(Student::getGpa);
+        Comparator<Student> nullFirstComparator = Comparator.nullsFirst(nameComparator);
+        Comparator<Student> nullLastComparator = Comparator.nullsLast(nameComparator);
 
-        System.out.println("Before sorting");
+        System.out.println("Before sorting:");
         studentList.forEach(studentConsumer);
-        System.out.println("After sorting");
+        System.out.println("After sorting:");
 //        studentList.sort(nameComparator);
 //        studentList.sort(gpaComparator.thenComparing(nameComparator));
-        studentList.sort(gpaComparator.reversed().thenComparing(nameComparator));
+//        studentList.sort(gpaComparator.reversed().thenComparing(nameComparator));
+//        studentList.sort(nullFirstComparator);
+        studentList.sort(nullLastComparator);
         studentList.forEach(studentConsumer);
 
     }
