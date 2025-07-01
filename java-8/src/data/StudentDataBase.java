@@ -2,11 +2,20 @@ package data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 import java.util.function.Supplier;
 
 public class StudentDataBase {
-    public static Supplier<Student> studentSupplier = () -> new Student("Adam",2,3.6,
-            "male",10,Arrays.asList("swimming", "basketball","volleyball"));
+    private static Random rand = new Random();
+
+    public static Supplier<Student> studentSupplier = () -> {
+        Bike bike = new Bike("Motorota", "R1");
+        Student student = new Student("Adam",2,3.6,
+                "male",10,Arrays.asList("swimming", "basketball","volleyball"));
+        student.setBike(Optional.of(bike));
+        return rand.nextBoolean() ? student : null;
+    };
 
     /**
      * Total of 6 students in the database.

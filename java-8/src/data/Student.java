@@ -2,6 +2,7 @@ package data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Student {
     private String name;
@@ -9,6 +10,7 @@ public class Student {
     private double gpa;
     private String gender;
     private int noteBooks;
+    private Optional<Bike> bike;
 
     public Student(){
 
@@ -84,6 +86,14 @@ public class Student {
 
     public void setActivities(List<String> activities) {
         this.activities = activities;
+    }
+
+    public Optional<Bike> getBike() {
+        return bike;
+    }
+
+    public void setBike(Optional<Bike> bike) {
+        this.bike = bike;
     }
 
     public void printListOfActivities(){
