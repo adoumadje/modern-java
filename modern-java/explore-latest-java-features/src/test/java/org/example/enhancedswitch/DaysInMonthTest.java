@@ -25,6 +25,20 @@ public class DaysInMonthTest {
         assertEquals(expectedNumOfDays, days);
     }
 
+    @ParameterizedTest
+    @MethodSource("input")
+    void getDaysV3(Month month, int expectedNumOfDays) {
+        int days = DaysInMonth.getDaysV3(month, 2025);
+        assertEquals(expectedNumOfDays, days);
+    }
+
+    @ParameterizedTest
+    @MethodSource("input")
+    void getDaysV4(Month month, int expectedNumOfDays) {
+        int days = DaysInMonth.getDaysV4(month, 2025);
+        assertEquals(expectedNumOfDays, days);
+    }
+
     private static Stream<Arguments> input() {
         return Stream.of(
                 Arguments.of(Month.FEBRUARY, 28),

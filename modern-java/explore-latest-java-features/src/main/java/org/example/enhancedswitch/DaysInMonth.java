@@ -29,4 +29,23 @@ public class DaysInMonth {
             default -> 31;
         };
     }
+
+    public static int getDaysV3(Month month, int year) {
+        return switch (month) {
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> 30;
+            case FEBRUARY -> {
+                System.out.println("Checking...");
+                yield Year.isLeap(year) ? 29 : 28;
+            }
+            default -> 31;
+        };
+    }
+
+    public static int getDaysV4(Month month, int year) {
+        return switch (month) {
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> 30;
+            case FEBRUARY -> Year.isLeap(year) ? 29 : 28;
+            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> 31;
+        };
+    }
 }
