@@ -1,4 +1,4 @@
-package com.example.textblocks;
+package org.example.textblocks;
 
 public class TextBlocksExample {
     public static void main(String[] args) {

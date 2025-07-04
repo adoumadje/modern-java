@@ -1,4 +1,4 @@
-package com.example.var;
+package org.example.var;
 
 import java.util.List;
 import java.util.Map;
