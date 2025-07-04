@@ -18,6 +18,12 @@ public class DaysInMonthTest {
         assertEquals(expectedNumOfDays, days);
     }
 
+    @ParameterizedTest
+    @MethodSource("input")
+    void getDaysV2(Month month, int expectedNumOfDays) {
+        int days = DaysInMonth.getDaysV2(month, 2025);
+        assertEquals(expectedNumOfDays, days);
+    }
 
     private static Stream<Arguments> input() {
         return Stream.of(

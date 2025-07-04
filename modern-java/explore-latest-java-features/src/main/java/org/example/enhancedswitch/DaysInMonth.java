@@ -21,4 +21,12 @@ public class DaysInMonth {
         }
         return numOfDays;
     }
+
+    public static int getDaysV2(Month month, int year) {
+        return switch (month) {
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> 30;
+            case FEBRUARY -> Year.isLeap(year) ? 29 : 28;
+            default -> 31;
+        };
+    }
 }
