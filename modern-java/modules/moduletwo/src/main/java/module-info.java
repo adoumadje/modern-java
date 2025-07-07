@@ -1,4 +1,5 @@
 module moduletwo {
-    requires moduleone;
+//    requires moduleone;
+    requires transitive moduleone;
 
 }

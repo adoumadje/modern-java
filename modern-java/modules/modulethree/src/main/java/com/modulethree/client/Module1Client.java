@@ -1,19 +1,13 @@
-package service;
+package com.modulethree.client;
 
 import com.moduleone.dtos.Module1DTO;
 import com.moduleone.service.Module1Service;
-import dtos.Module2DTO;
 
-public class Module2Service {
-
+public class Module1Client {
     private final Module1Service module1Service;
 
-    public Module2Service(Module1Service module1Service) {
+    public Module1Client(Module1Service module1Service) {
         this.module1Service = module1Service;
-    }
-
-    public Module2DTO retrieveData(){
-        return new Module2DTO("Hello! This is from Module2");
     }
 
     public Module1DTO retrieveDataV2(){
